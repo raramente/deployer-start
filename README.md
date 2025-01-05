@@ -1,4 +1,4 @@
-# Deployer starter project
+# Deployer WordPress starter project
 
 A starter project to deploy WordPress websites using [Deployer](https://deployer.org/). Meant to be used with with [Bedrock](https://roots.io/bedrock/) and [Sage](https://roots.io/sage/) to speed up development.
 
