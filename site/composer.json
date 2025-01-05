@@ -41,7 +41,8 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "roots/acorn": "^4.3"
+    "roots/acorn": "^4.3",
+    "wpackagist-plugin/w3-total-cache": "2.8.2"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
