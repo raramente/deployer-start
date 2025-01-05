@@ -1,0 +1,44 @@
+config:
+  name: "Hugo Silva - FullStack Freelancer"
+  repository: git@github.com:raramente/deployer-start.git
+  keep_release: 4
+  public_path: web
+  theme/name: deployer-start
+  theme/path: "{{release_path}}/web/app/themes"
+  local/address: http://deployer-start.lndo.site
+  local/path_to_wp_root: site
+  local/wp_uploads: "web/app/uploads"
+  local/wp: "lando wp"
+  local/dump_path: "database"
+  git_tty: true
+  writable_use_sudo: false
+  allow_anonymous_stats: false
+  bin/php: /usr/bin/php8.1
+  bin/wp: "php wp-cli.phar"
+  bin/composer: /usr/local/bin/composer
+  bin/yarn: "source ~/.nvm/nvm.sh && yarn"
+  notifications:
+    enabled: true
+    webhook: "<change-this-to-a-webhook>"
+    favicon: "https://hugosilva.me/app/uploads/2024/05/hugo-silva-logo-200x200.png"
+  shared_files:
+    - .env
+    - web/app/advanced-cache.php # W3 Total Cache
+    - web/app/db.php # W3 Total Cache
+    - web/nginx.conf # W3 Total Cache
+  shared_dirs:
+    - web/app/uploads
+    - web/app/w3tc-config/ # W3 Total Cache
+  writable_dirs:
+    - web/app/uploads
+
+hosts:
+  production:
+    labels:
+      stage: production
+    hostname: devops.hugosilva.me
+    branch: master
+    sub_directory: site
+    remote_user: deployer
+    public_url: https://devops.hugosilva.me
+    deploy_path: "~/devops.hugosilva.me"
